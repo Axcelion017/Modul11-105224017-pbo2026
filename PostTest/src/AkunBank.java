@@ -18,11 +18,19 @@ public class AkunBank {
         return totalTransferHariIni;
     }
 
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void tambahSaldo(double nominal) {
+        setSaldo(getSaldo() + nominal);
+    }
+
     public void tarikTunai(double nominal) throws SaldoTidakMencukupiException {
         if (nominal > saldo) {
             throw new SaldoTidakMencukupiException("Saldo tidak mencukupi untuk penarikan.", nominal - saldo);
         }else{
-            saldo -= nominal;
+            setSaldo(getSaldo() - nominal);
             System.out.println("Penarikan sebesar Rp" + nominal + " berhasil dari " + nomorRekening);
         }
     }
@@ -33,9 +41,9 @@ public class AkunBank {
         } else if (totalTransferHariIni + nominal > 10000000) {
             throw new BatasTransferHarianException("Batas transfer harian telah terlampaui.");
         }else{
-            saldo -= nominal;
-            tujuan.saldo += nominal;
-            totalTransferHariIni += nominal;
+            this.saldo -= nominal;
+            tujuan.tambahSaldo(nominal);
+            this.totalTransferHariIni += nominal;
             System.out.println("Transfer sebesar Rp" + nominal + " berhasil dari " + nomorRekening + " ke " + tujuan.getNomorRekening());
        }
     }
