@@ -23,7 +23,7 @@ public class AkunBank {
     }
 
     public void tambahSaldo(double nominal) {
-        setSaldo(getSaldo() + nominal);
+        this.saldo += nominal;
     }
 
     public void tarikTunai(double nominal) throws SaldoTidakMencukupiException {

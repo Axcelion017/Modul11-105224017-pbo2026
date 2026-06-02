@@ -22,5 +22,10 @@ public class App {
         }finally {
             System.out.println("Sesi Transaksi ATM Anda telah diakhiri. Kartu dikeluarkan otomatis.\n");
         }
+
+        // Menampilkan saldo akhir
+        System.out.println("Saldo akhir " + akun1.getNomorRekening() + ": Rp" + akun1.getSaldo());
+        System.out.println("Saldo akhir " + akun2.getNomorRekening() + ": Rp" + akun2.getSaldo());
+        
     }
 }
