@@ -3,6 +3,7 @@ public class App {
         AkunBank akun1 = new AkunBank("1234567890", 15000000);
         AkunBank akun2 = new AkunBank("0987654321", 3000000);
 
+        System.out.println("Simulasi PostTest Modul 11.\n");
         try {
             // Mencoba tarik tunai melebihi saldo
             akun1.tarikTunai(16000000);
@@ -19,7 +20,7 @@ public class App {
         } catch (BatasTransferHarianException e) {
             System.out.println("Error: " + e.getMessage());
         }finally {
-            System.out.println("Sesi Transaksi ATM Anda telah diakhiri. Kartu dikeluarkan otomatis.");
+            System.out.println("Sesi Transaksi ATM Anda telah diakhiri. Kartu dikeluarkan otomatis.\n");
         }
     }
 }
