@@ -1,5 +1,11 @@
 public class SaldoTidakMencukupiException extends Exception {
-    public SaldoTidakMencukupiException(String message) {
+    private double kurang;
+    public SaldoTidakMencukupiException(String message, double kurang) {
         super(message);
+        this.kurang = kurang;
+    }
+
+    public double getKurang() {
+        return kurang;
     }
 }

@@ -20,7 +20,7 @@ public class AkunBank {
 
     public void tarikTunai(double nominal) throws SaldoTidakMencukupiException {
         if (nominal > saldo) {
-            throw new SaldoTidakMencukupiException("Saldo tidak mencukupi untuk penarikan.");
+            throw new SaldoTidakMencukupiException("Saldo tidak mencukupi untuk penarikan.", nominal - saldo);
         }else{
             saldo -= nominal;
             System.out.println("Penarikan sebesar Rp" + nominal + " berhasil dari " + nomorRekening);
@@ -29,7 +29,7 @@ public class AkunBank {
 
     public void transfer(AkunBank tujuan, double nominal) throws SaldoTidakMencukupiException, BatasTransferHarianException {
         if (nominal > saldo) {
-            throw new SaldoTidakMencukupiException("Saldo tidak mencukupi untuk transfer.");
+            throw new SaldoTidakMencukupiException("Saldo tidak mencukupi untuk transfer.", nominal - saldo);
         } else if (totalTransferHariIni + nominal > 10000000) {
             throw new BatasTransferHarianException("Batas transfer harian telah terlampaui.");
         }else{

@@ -7,7 +7,7 @@ public class App {
             // Mencoba tarik tunai melebihi saldo
             akun1.tarikTunai(16000000);
         } catch (SaldoTidakMencukupiException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage() + " Saldo kurang sebesar Rp" + e.getKurang());
         }
 
         try{
@@ -15,7 +15,7 @@ public class App {
             akun1.transfer(akun2, 9000000);//berhasil
             akun1.transfer(akun2, 2000000);//gagal karena melebihi batas harian
         } catch (SaldoTidakMencukupiException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage() + " Saldo kurang sebesar Rp" + e.getKurang());
         } catch (BatasTransferHarianException e) {
             System.out.println("Error: " + e.getMessage());
         }finally {
