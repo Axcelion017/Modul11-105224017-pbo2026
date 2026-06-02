@@ -16,9 +16,9 @@ public class App {
         }catch(InputMismatchException i){
             System.out.println("Error: Input harus berupa angka. (" + i.getMessage() + ")");
         }finally{
-            System.out.println("Program kelar nih bos.");
+            input.close();
+            System.out.println("Proses kalkulasi selesai dan resource memory telah dibersihkan.");
         }
-        input.close();
     }
 }
 
