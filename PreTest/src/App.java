@@ -12,9 +12,9 @@ public class App {
             num2 = input.nextInt();
             hasil = num1 / num2;
         }catch (ArithmeticException e) {
-            System.out.println("Error: Pembagian dengan nol tidak diperbolehkan. Error: " + e.getMessage());
+            System.out.println("Error: Pembagian dengan nol tidak diperbolehkan. (" + e.getMessage() + ")");
         }catch(InputMismatchException i){
-            System.out.println("Error: Input harus berupa angka. Error: " + i.getMessage());
+            System.out.println("Error: Input harus berupa angka. (" + i.getMessage() + ")");
         }finally{
             System.out.println("Program kelar nih bos.");
         }
